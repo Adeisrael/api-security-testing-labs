@@ -2,7 +2,7 @@
 
 # OVERVIEW 
 
-This porject documents pratical API security testing techniques, methodologies, vulnerabilities, and remediation strategies. 
+This prOject documents pratical API security testing techniques, methodologies, vulnerabilities, and remediation strategies. 
 
 The objective is to develop a structured understanding of API attack surfaces and demonstrate practical application security testing skills using controlled lab environments.  
 
