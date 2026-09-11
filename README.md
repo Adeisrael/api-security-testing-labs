@@ -7,14 +7,14 @@ This project documents practical API security testing techniques, methodologies,
 The objective is to develop a structured understanding of API attack surfaces and demonstrate practical application security testing skills using controlled lab environments.  
 
 # Objectives
-<li>Understand Common API attack surfaces according to OWASP
-<li>Assess authentication mechanisms
-<li>Test authorisation controls
-<li>Identify input validation weaknesses
-<li>Investigate API security vulnerabilities
-<li>Understand common API attack techniques
-<li>Document security findings
-<li>Develop appropriate remediation recommendations
+- Understand common API attack surfaces according to OWASP
+- Assess authentication mechanisms
+- Test authorisation controls
+- Identify input validation weaknesses
+- Investigate API security vulnerabilities
+- Understand common API attack techniques
+- Document security findings
+- Develop appropriate remediation recommendations
 
 # Technologies & Tools
 <li>Burp Suite
