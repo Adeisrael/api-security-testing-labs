@@ -3,26 +3,20 @@
 ## Overview
 Brief explanation of the vulnerability and what was discovered.
 
-There are two BOLA vulnerabilities discovered in this section. 
-Finding 1- This vulnerability was exploited through manipulating the Resource ID in the URL path. The API 
-endpoint handles access control poorly by determining which mechanic report to display based
-solely on a sequential ID parameter passed in the URL path, failing to verify whether the
-authenticated user owns that specific resource.
-
-Finding 2-  The crAPI store allows users to cancel purchases using an HTTP DELETE method. 
-However, the server lacks authorization validation on this method, relying entirely on the 
-client-supplied order_id string in the URL path.
-
+The BFLA vulnerability discovered in this section. 
+ An authenticated, low-privilege user can abuse an administrative endpoint to delete video files belonging to any other platform user. Initially, unauthorized deletion attempts returned a verbose error message leaking hidden internal API routing components. Because the backend fails to validate user roles on administrative functions, standard users can invoke this hidden path to perform restricted, highly destructive actions (Vertical Privilege Escalation).
 
 ## Target
 crAPI API Security Lab
 
 ## Vulnerability
-BFLA / OWASP API1:2023
+BFLA / OWASP API5:2023
 
 ## What I Discovered
-Finding 1 -  By using the verbose error message on from an atttempted attack, intel 
+By using the verbose error message on from an atttempted attack, intel 
 suggested that was ADMIN permissions were required to perform "DELETE" action on crAPI. 
+However, in order to exploit this vulnerability in the real world, you would need to retrieve a valid resource identifier 
+integer that points to another users video and this can be done with a Burp Inspector.
 
 
 ## Tools
@@ -37,10 +31,10 @@ User A → GET request → Change resource ID → API returns User B's data
 [Screenshot 2]
 
 ## Impact
-Unauthorized action performed to delete user's videos.
+ Unauthorized data deletion breaches system data integrity and directly compromises availability for legitimate users.
 
 ## Remediation
-Implement server-side object-level authorization checks.
+Deny access by default to any API path prefixed with /admin/ unless the user session explicitly satisfies administrative policy criteria at the API gateway tier.
 
 ## Detailed Report
-[View Full BOLA Report](./report/BOLA-Report.pdf)
+[View Full BFLA Report](./report/BFLA-Report.pdf)
