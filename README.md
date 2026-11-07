@@ -90,7 +90,7 @@ Identifying available:
   
 # Lab Environment
 
-Testing will be performed against intentionally vulnerable applications and controlled laboratory environments.
+All testing was performed against intentionally vulnerable applications in controlled lab environments. 
 
 No confidential client, employer, production, or proprietary information is included in this repository.
 
@@ -105,27 +105,27 @@ Security findings will be documented according to:
 <li>Security impact
 <li>Evidence
 <li>Recommended remediation
-<li>Remediation
 
 Where vulnerabilities are identified, the project will document appropriate defensive measures and secure implementation recommendations.
 
+### Completed Reports
+| ID | Vulnerability Class | Severity | Status |
+|----|--------------------|----------|--------|
+| 01 | BOLA — object access across user boundaries | High | Report complete |
+| 02 | BFLA — unauthorised function invocation | High | Report complete |
+
 # Learning Outcomes
 
-This project is intended to demonstrate practical understanding of:
-<li>API security
-<li>Web application security
-<li>Authentication
-<li>Authorization
-<li>Vulnerability assessment
-<li>Security testing methodology
-<li>Security documentation
-<li>Risk-based remediation
-<li>Future Work
+This work demonstrates practical understanding of API security, web application security, authentication, authorization, vulnerability assessment, security testing methodology, security documentation, and risk-based remediation.
 
-Planned extensions include:
-<li>Automated API security testing
-<li>Python-based security tooling
-<li>API vulnerability detection
+# Limitations
+
+<li>Tests were performed in confined lab environments; no production or live-target validation was performed.
+<li>Coverage is weighted toward authorization flaws (BOLA/BFLA); injection and business-logic testing are less developed.
+<li>Findings were manually validated; no automated fuzzing or regression harness was built.
+
+#Future Work
+<li>Automated API security testing and Python-based security tooling
 <li>Machine-learning-assisted vulnerability analysis
 <li>AI-assisted security testing
 <li>LLM security testing
